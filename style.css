@@ -1,0 +1,34 @@
+body {
+  font-size: 24px;
+  display:flex;
+  justify-content: center;
+}
+
+.page {
+  margin-top: 15vh;
+  max-width: 600px;
+  width: 100%;
+  apsect-ratio: 2 / 1;
+  padding: 0 16px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  width: 600px;
+  gap: 12px;
+}
+
+.row a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.row a:hover {
+  text-decoration: underline;
+}
+
+.left {
+  margin-right: auto
+}
