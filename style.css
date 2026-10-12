@@ -1,7 +1,29 @@
+@font-face {
+  font-family: "Libron";
+  src: url("fonts/Libron-Regular.woff2") format("woff2");
+  font-display: block;
+}
+
+:root {
+  --bg: #eee;
+  --text: #444;
+  --link: #0087af;
+
+}
+
+:root.dark {
+  --bg: #1c1c1c;
+  --text: #d0d0d0;
+  --link: #5fafd7;
+}
+
 body {
+  font-family: "Libron", courier, sans-serif;
   font-size: 24px;
   display:flex;
   justify-content: center;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .page {
@@ -18,6 +40,15 @@ body {
   display: flex;
   width: 600px;
   gap: 12px;
+  align-items: baseline;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .row a {
@@ -29,6 +60,55 @@ body {
   text-decoration: underline;
 }
 
+.row a[aria-current="page"] {
+  text-decoration: underline;
+}
+
 .left {
   margin-right: auto
+}
+
+.row button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor:pointer;
+}
+
+.row button:hover {
+  text-decoration: underline;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.5em;
+  font-weight: 200;
+}
+
+.list li {
+  padding-left: 0.4em;
+  margin-bottom: 0.5em;
+}
+
+.list li::marker {
+  font-size: 0.8em;
+}
+
+.labeled {
+  list-style: none;
+  margin: 0;
+  padding: 10;
+}
+.labeled li {
+  display: grid;
+  grid-template-columns: 3em 1fr;    /* label column width, then the text */
+  gap: 0.0em;
+  align-items: baseline;             /* lines the small label up with the text */
+  margin-bottom: 0.5em;
+}
+
+.labeled .label {
+  font-size: 0.8em;
 }
